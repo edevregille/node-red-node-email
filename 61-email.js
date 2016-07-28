@@ -373,9 +373,10 @@ module.exports = function(RED) {
                                 imap.end();
                             };
                             if (this.disposition == "Delete") {
-                                imap.addFlags(results, "\Deleted", cleanup);
+                                //imap.addFlags(results, "Deleted", cleanup);
+                                imap.addFlags(results, "Watson", cleanup);
                             } else if (this.disposition == "Read") {
-                                imap.addFlags(results, "\Answered", cleanup);
+                                imap.addFlags(results, "Answered", cleanup);
                             } else {
                                 cleanup();
                             }
